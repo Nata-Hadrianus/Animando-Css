@@ -1,0 +1,79 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 20px;
+  background-color: indianred;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.box {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  filter: drop-shadow(0 15px 50px rgb(20, 20, 20));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotating 2s linear infinite;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(100deg);
+  }
+}
+
+.box-1 {
+  --a: 45deg;
+  background: repeating-conic-gradient(from var(--a), #579774 0%, #c93752 5%, transparent 5%, transparent 40%, #7ed8cc 50%);
+}
+
+.box-2 {
+  --a: 135deg;
+  background: repeating-conic-gradient(from var(--a), #2657c2 0%, #2657c2 5%, rgba(140, 159, 212, 1) 5%, rgba(107, 40, 121, 0.6) 40%, rgba(32, 19, 58, 0.133) 50%);
+}
+
+.box-3 {
+  --a: 225deg;
+  background: repeating-conic-gradient(from var(--a), #3fb9a9 0%, #941dac 5%, transparent 5%, transparent 40%, #be7381 50%);
+}
+
+.box::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 8px solid rgb(26, 25, 25);
+  border-radius: 15px;
+  background: #3b3b3b;
+}
+
+.box h2 {
+  position: absolute;
+  inset: 40px;
+  display: flex;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: #2c2b2c;
+  color: #fff;
+  font-size: 2rem; /* Corrigido para 2rem */
+  font-weight: 500;
+  text-transform: uppercase;
+  box-shadow: inset 0 10px 20px rgb(32, 30, 30);
+  border-bottom: 2px solid rgb(165, 163, 163);
+}
